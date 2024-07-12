@@ -16,8 +16,6 @@ import re
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import tempfile
-import shutil
-import subprocess
 
 file    =   'Juli'
 saveas  =   '7. Juli'
