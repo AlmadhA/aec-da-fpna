@@ -140,23 +140,23 @@ if uploaded_file is not None:
                             ].sort_values('percentage_#Prime.NetPrice',ascending=False).to_csv(f'{tmpdirname}/_final/Salah Kuantitas_Satuan_Harga (Code 9).csv', index=False)
 
             st.markdown('### Output')
-                        zip_buffer = io.BytesIO()
-                        with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
-                            zip_file.writestr(f'Salah Cabang.csv', df_salah_cg.to_csv(index=False))
-                            zip_file.writestr(f'Free Item.csv', df_9901_FI.to_csv(index=False))
-                            zip_file.writestr(f'Salah Nama Barang.csv', df_salah_b1.to_csv(index=False))
-                            zip_file.writestr(f'Salah Kuantitas_Satuan_Harga (Code 1).csv', df_satuan1.to_csv(index=False))
-                            zip_file.writestr(f'Salah Kuantitas_Satuan_Harga (Code 2).csv', df_satuan2.to_csv(index=False))
-                            zip_file.writestr(f'Salah Kuantitas_Satuan_Harga (Code 4).csv', df_satuan4.to_csv(index=False))
-                            zip_file.writestr(f'Salah Kuantitas_Satuan_Harga (Code 9).csv', df_satuan9.to_csv(index=False))
-                        
-                        # Pastikan buffer ZIP berada di awal
-                        zip_buffer.seek(0)
-                        
-                        # Tombol untuk mengunduh file ZIP
-                        st.download_button(
-                            label="Download all Files",
-                            data=zip_buffer,
-                            file_name=f'ABO_{dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.zip',
-                            mime='application/zip',
-                        )  
+            zip_buffer = io.BytesIO()
+            with zipfile.ZipFile(zip_buffer, "a", zipfile.ZIP_DEFLATED, False) as zip_file:
+                zip_file.writestr(f'Salah Cabang.csv', df_salah_cg.to_csv(index=False))
+                zip_file.writestr(f'Free Item.csv', df_9901_FI.to_csv(index=False))
+                zip_file.writestr(f'Salah Nama Barang.csv', df_salah_b1.to_csv(index=False))
+                zip_file.writestr(f'Salah Kuantitas_Satuan_Harga (Code 1).csv', df_satuan1.to_csv(index=False))
+                zip_file.writestr(f'Salah Kuantitas_Satuan_Harga (Code 2).csv', df_satuan2.to_csv(index=False))
+                zip_file.writestr(f'Salah Kuantitas_Satuan_Harga (Code 4).csv', df_satuan4.to_csv(index=False))
+                zip_file.writestr(f'Salah Kuantitas_Satuan_Harga (Code 9).csv', df_satuan9.to_csv(index=False))
+            
+            # Pastikan buffer ZIP berada di awal
+            zip_buffer.seek(0)
+            
+            # Tombol untuk mengunduh file ZIP
+            st.download_button(
+                label="Download all Files",
+                data=zip_buffer,
+                file_name=f'ABO_{dt.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")}.zip',
+                mime='application/zip',
+            )  
