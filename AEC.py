@@ -20,6 +20,7 @@ import tempfile
 file    =   'Juli'
 saveas  =   '7. Juli'
 
+st.title('Automate Error Checking (99.01)')
 st.markdown('### Upload file *Zip')
 uploaded_file = st.file_uploader("Pilih file ZIP", type="zip")
 
