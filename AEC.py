@@ -4,8 +4,6 @@ import glob
 import numpy as np
 import time
 import datetime as dt
-import re
-from openpyxl import Workbook
 
 file    =   'Juli'
 saveas  =   '7. Juli'
