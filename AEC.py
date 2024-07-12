@@ -138,16 +138,16 @@ if uploaded_file is not None:
 
             df_satuan1  =   df_satuan[(df_satuan['Kode #'].astype(str).str.startswith('1')) &
                             (((df_satuan['percentage_#Prime.NetPrice']>1.5) | (df_satuan['percentage_#Prime.NetPrice']<0.5)))
-                            ].sort_values('percentage_#Prime.NetPrice',ascending=False).to_csv(f'{tmpdirname}/_final/Salah Kuantitas_Satuan_Harga (Code 1).csv', index=False)
+                            ].sort_values('percentage_#Prime.NetPrice',ascending=False)
             df_satuan2  =   df_satuan[(df_satuan['Kode #'].astype(str).str.startswith('2')) &
                             (((df_satuan['percentage_#Prime.NetPrice']>1.5) | (df_satuan['percentage_#Prime.NetPrice']<0.5)))
-                            ].sort_values('percentage_#Prime.NetPrice',ascending=False).to_csv(f'{tmpdirname}/_final/Salah Kuantitas_Satuan_Harga (Code 2).csv', index=False)
+                            ].sort_values('percentage_#Prime.NetPrice',ascending=False)
             df_satuan4  =   df_satuan[(df_satuan['Kode #'].astype(str).str.startswith('4')) &
                             (((df_satuan['percentage_#Prime.NetPrice']>1.5) | (df_satuan['percentage_#Prime.NetPrice']<0.5)))
-                            ].sort_values('percentage_#Prime.NetPrice',ascending=False).to_csv(f'{tmpdirname}/_final/Salah Kuantitas_Satuan_Harga (Code 4).csv', index=False)
+                            ].sort_values('percentage_#Prime.NetPrice',ascending=False)
             df_satuan9  =   df_satuan[(df_satuan['Kode #'].astype(str).str.startswith('9')) &
                             (((df_satuan['percentage_#Prime.NetPrice']>1.5) | (df_satuan['percentage_#Prime.NetPrice']<0.5)))
-                            ].sort_values('percentage_#Prime.NetPrice',ascending=False).to_csv(f'{tmpdirname}/_final/Salah Kuantitas_Satuan_Harga (Code 9).csv', index=False)
+                            ].sort_values('percentage_#Prime.NetPrice',ascending=False)
 
             st.markdown('### Output')
             zip_buffer = io.BytesIO()
