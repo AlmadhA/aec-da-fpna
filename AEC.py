@@ -24,17 +24,21 @@ def add_watermark():
     st.markdown(
         f"""
         <style>
-        .watermark {{
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
-            font-size: 18px;
-            color: rgba(0, 0, 0, 0.5);
-            z-index: 9999;
-            pointer-events: none;
+        .stApp {{
+            position: relative;
+        }}
+        .stApp::before {{
+            content: "Your Watermark Text";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            color: rgba(0, 0, 0, 0.1);
+            z-index: -1;
+            white-space: nowrap;
         }}
         </style>
-        <div class="watermark">FPnA-TAF</div>
         """,
         unsafe_allow_html=True
     )
