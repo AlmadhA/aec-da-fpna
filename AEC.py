@@ -22,30 +22,6 @@ saveas  =   '7. Juli'
 
 st.title('Automate Error Checking (99.01)')
 st.markdown('### Upload file *Zip')
-def add_watermark():
-    st.markdown(
-        """
-        <style>
-        .watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 100px;
-            color: rgba(0, 0, 0, 0.1);
-            z-index: -1;
-            white-space: nowrap;
-            pointer-events: none;
-            user-select: none;
-        }
-        </style>
-        <div class="watermark">Your Watermark Text</div>
-        """,
-        unsafe_allow_html=True
-    )
-
-add_watermark()
-
 uploaded_file = st.file_uploader("Pilih file ZIP", type="zip")
 
 if uploaded_file is not None:
