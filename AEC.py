@@ -20,6 +20,27 @@ import tempfile
 file    =   'Juli'
 saveas  =   '7. Juli'
 
+def add_watermark():
+    st.markdown(
+        f"""
+        <style>
+        .watermark {{
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            pointer-events: none;
+        }}
+        </style>
+        <div class="watermark">FPnA-TAF</div>
+        """,
+        unsafe_allow_html=True
+    )
+
+add_watermark()
+
 st.title('Automate Error Checking (99.01)')
 st.markdown('### Upload file *Zip')
 uploaded_file = st.file_uploader("Pilih file ZIP", type="zip")
